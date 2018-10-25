@@ -48,30 +48,30 @@ void USBH_USR_Init(void)
 void USBH_USR_DeviceAttached(void)//U盘插入
 {
 	BEEP=1;
-	delay_ms(50);
+	delay_ms(30);
 	BEEP=0;
 	delay_ms(100);
 	BEEP=1;
-	delay_ms(50);
+	delay_ms(30);
 	BEEP=0;
-	delay_ms(100);
+	delay_ms(500);
 	printf("检测到USB设备插入!\r\n");
 }
 //检测到U盘拔出
 void USBH_USR_DeviceDisconnected (void)//U盘移除
 {
 	BEEP=1;
-	delay_ms(50);
+	delay_ms(30);
 	BEEP=0;
 	delay_ms(100);
 	BEEP=1;
-	delay_ms(50);
+	delay_ms(30);
 	BEEP=0;
 	delay_ms(100);
 	BEEP=1;
-	delay_ms(50);
+	delay_ms(30);
 	BEEP=0;
-	delay_ms(100);
+	delay_ms(500);
 	printf("USB设备拔出!\r\n");
 }  
 //复位从机
