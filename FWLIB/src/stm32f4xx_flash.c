@@ -796,7 +796,7 @@ FLASH_Status FLASH_ProgramWord(uint32_t Address, uint32_t Data)
   {
     /* if the previous operation is completed, proceed to program the new data */
     FLASH->CR &= CR_PSIZE_MASK;
-    FLASH->CR |= FLASH_PSIZE_WORD;
+    FLASH->CR |= FLASH_PSIZE_WORD; 
     FLASH->CR |= FLASH_CR_PG;
   
     *(__IO uint32_t*)Address = Data;

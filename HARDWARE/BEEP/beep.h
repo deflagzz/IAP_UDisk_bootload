@@ -3,10 +3,10 @@
 
 #include "my_include.h"
 
-#define BEEP PAout(3) //1有效
+#define BEEP PBout(7) //1有效
   
 
-void beep_init(void);   //PA3 
+void beep_init(void);   //PB7 
 
 
 

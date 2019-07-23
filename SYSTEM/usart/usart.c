@@ -29,15 +29,17 @@ struct __FILE
 
 FILE __stdout;       
 //定义_sys_exit()以避免使用半主机模式    
-_sys_exit(int x) 
+void _sys_exit(int x) 
 { 
 	x = x; 
 } 
 //重定义fputc函数 
 int fputc(int ch, FILE *f)
 { 	
+	#if 0	
 	while((USART3->SR&0X40)==0);//循环发送,直到发送完毕   
 	USART3->DR = (u8) ch;      
+	#endif
 	return ch;
 }
 #endif
@@ -90,8 +92,7 @@ void USART3_Configuration(u32 bound)
 
 void USART3_IRQHandler(void)             
 {
-	u16 temp_b=0;
-	u8  temp_V=0;
+
 	u8 temp_data3=0;
 	
 #if SYSTEM_SUPPORT_OS 	
@@ -192,7 +193,7 @@ void DMA_Uart3_Init(void)
 }
 #endif
 
- 
+
 
 
 
